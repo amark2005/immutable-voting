@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class BlockchainService {
   private http = inject(HttpClient);
-  private apiUrl = 'https://immutable-voting.vercel.app/'; // Adjust for production later
+  private apiUrl = 'https://vercel.com/amark2005s/immutable-voting-c3lh/32rgqEFrxo4shem1XhfkXUL8Vw8L'; // Adjust for production later
 
   // NEW: Login method
   login(credentials: { usercode: string; passcode: string }): Observable<any> {
