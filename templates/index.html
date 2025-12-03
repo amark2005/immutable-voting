@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Voting Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>E-Voting Portal</h1>
+            <p>A demonstration of a blockchain-like immutable voting system.</p>
+        </header>
+
+        <!-- Login Section -->
+        <section id="login-section" class="card">
+            <h2>Voter Login</h2>
+            <form id="login-form">
+                <div>
+                    <label for="usercode">User Code</label>
+                    <input id="usercode" type="text" placeholder="e.g., VOTER01" autocomplete="username" required>
+                </div>
+                <div>
+                    <label for="passcode">4-Digit Passcode</label>
+                    <input id="passcode" type="password" maxlength="4" autocomplete="current-password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p id="login-error" class="error hidden"></p>
+            </form>
+        </section>
+
+        <!-- Voting Section -->
+        <section id="voting-section" class="card hidden">
+            <h2>Welcome, <span id="voter-name"></span>!</h2>
+            <p>Please select your candidate.</p>
+
+            <div id="candidate-list" class="candidate-list">
+                <!-- Candidates will be injected here -->
+            </div>
+
+            <p id="voting-error" class="error hidden"></p>
+        </section>
+
+        <!-- Success Section -->
+        <section id="success-section" class="card success-poster hidden">
+            <h2>Voted Successfully!</h2>
+            <p>Thank you for participating.</p>
+            <p>This screen will reset automatically for the next voter.</p>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
